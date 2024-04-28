@@ -1,0 +1,32 @@
+{
+  "name": "portifolio-web-cypress",
+  "version": "1.0.0",
+  "description": "Portifólio de automação de teste e2e com cypress",
+  "main": "index.js",
+  "scripts": {
+    "test:open": "cypress open",
+    "test:run": "cypress run",
+    "test:smokeTest": "npx cypress run --env grepTag=@smokeTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JessicaFortes/portifolio-web-cypress.git"
+  },
+  "keywords": [
+    "cypress",
+    "automacao",
+    "web",
+    "e2e",
+    "teste"
+  ],
+  "author": "Jéssica Magalhães",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessicaFortes/portifolio-web-cypress/issues"
+  },
+  "homepage": "https://github.com/JessicaFortes/portifolio-web-cypress#readme",
+  "devDependencies": {
+    "@cypress/grep": "^4.0.1",
+    "cypress": "^13.8.1"
+  }
+}
