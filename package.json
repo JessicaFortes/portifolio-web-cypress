@@ -4,8 +4,9 @@
   "description": "Portifólio de automação de teste e2e com cypress",
   "main": "index.js",
   "scripts": {
-    "test:open": "cypress open",
-    "test:run": "cypress run",
+    "test:open": "cypress open --config-file ./cypress/config/development.js",
+    "test:run": "cypress run --e2e --config-file ./cypress/config/homologacao.js",
+    "test:dev:chrome": "cypress run --e2e -b chrome --config-file ./cypress/config/development.js",
     "test:smokeTest": "npx cypress run --env grepTag=@smokeTest"
   },
   "repository": {
