@@ -19,9 +19,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build
-          start: npm run test:run
+          command: npm run test:run
       
-      - name: Check on failures
-        if: steps.cypress.outcome != 'success'
-        run: exit 1
