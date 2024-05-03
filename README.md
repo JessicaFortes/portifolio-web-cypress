@@ -2,6 +2,9 @@
 
 > Este projeto foi criado com o objetivo de demonstrar meu conhecimento e habilidades em automação de testes web utilizando o framework Cypress. Aqui, você encontrará testes automatizados para diferentes cenários de uma aplicação web, incluindo testes de funcionalidade, usabilidade e integração.  
 
+### Sobre a aplicação:
+ > Os testes fará a validação do site https://automationexercise.com/. 
+
 ### Principais Tecnologias Utilizadas:
 
 - Cypress (13.8)
@@ -9,13 +12,25 @@
 - Node.js (20.x)
 
 
-## 💻 Conhecimentos Demonstradas:
+## 💻 Conhecimentos Demonstrados:
+  
+# GIT
+- Regras de proteção da branch defautl;
+- Regras de pull request;
+- Git Flow;
+- Arquivos do git ignore;
+- Integração com ferramentas de CI/CD;
 
-- Criação de casos de teste
-- Configuração de execução para ambientes diferentes
-- Configuração de execução por Tag
-- Execução de testes automatizados
-- Integração com ferramentas de CI/CD
+# Arquitetura
+- Configuração de execução por ambiente;
+- Utilização do Page Object;
+- Definir o browser da execução de teste;
+
+# Testes
+- Criação de casos de teste;
+- Configuração de execução por Tag (tipo de teste, funcionalidade ou escopo);
+- Relatórios;
+
 
 ## 🚀 Instalando portfolio_web_cypress
 
