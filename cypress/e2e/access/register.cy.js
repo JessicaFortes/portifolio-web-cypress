@@ -47,8 +47,7 @@ describe("Funcionalidade: Cadastro de usuário",
       navigate.validtUrl("/account_created")
       elements.containText(accountCreated.titlePage, "Account Created!")
       elements.containText(accountCreated.txt1, "Congratulations! Your new account has been successfully created!")
-      elements.containText(accountCreated.txt1, "You can now take advantage of member privileges to enhance your online shopping experience with us.")
-      elements.click(accountCreated.btnContinue);
+      elements.containText(accountCreated.txt2, "You can now take advantage of member privileges to enhance your online shopping experience with us.")
     });
     it("[CT-002] Deletar usuário", () => {
       navigate.toBaseUrl();
