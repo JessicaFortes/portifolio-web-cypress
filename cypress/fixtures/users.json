@@ -1,0 +1,20 @@
+{
+  "userRegister": {
+    "email": "mariabonita@teste.com.br",
+    "password": "123456",
+    "name": "Maria Bonita Caldas",
+    "day": "11",
+    "month": "April",
+    "year": "1991",
+    "fistName": "Maria",
+    "lastName": "Caldas",
+    "company": "Magic Games SA",
+    "address": "Rua das Flores",
+    "address2": "Cond. Rai de Sol",
+    "country": "Canada",
+    "state": "Quebec",
+    "city": "Montreal",
+    "zipCode": "21795658",
+    "number": "21999999999"
+  }
+}
