@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test:open": "cypress open --config-file ./cypress/config/development.js",
-    "test:run": "cypress run --e2e --config-file ./cypress/config/homologacao.js",
+    "test:run": "cypress run --e2e --config-file ./cypress/config/homologacao.js --env includeSetup=true",
     "test:dev:chrome": "cypress run --e2e -b chrome --config-file ./cypress/config/development.js",
-    "test:smokeTest": "npx cypress run --env grepTag=@smokeTest"
+    "test:smokeTest": "cypress run --e2e --config-file ./cypress/config/homologacao.js --env grepTags=@smokeTest",
+    "test:setup:auth": "cypress run --e2e --config-file ./cypress/config/homologacao.js --env includeSetup=true --spec cypress/e2e/00-setup/auth-setup.cy.js",
+    "test:auth": "cypress run --e2e --config-file ./cypress/config/homologacao.js --spec cypress/e2e/access/auth.cy.js",
+    "test:auth:with-setup": "cypress run --e2e --config-file ./cypress/config/homologacao.js --env includeSetup=true --spec \"cypress/e2e/00-setup/auth-setup.cy.js,cypress/e2e/access/auth.cy.js\""
   },
   "repository": {
     "type": "git",
@@ -27,7 +30,9 @@
   },
   "homepage": "https://github.com/JessicaFortes/portifolio-web-cypress#readme",
   "devDependencies": {
-    "@cypress/grep": "^4.0.1",
-    "cypress": "^13.8.1"
+    "@cypress/grep": "^4.0.1"
+  },
+  "dependencies": {
+    "cypress": "^15.10.0"
   }
 }

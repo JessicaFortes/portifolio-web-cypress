@@ -1,72 +1,70 @@
-# Projeto de Automação de Testes Web com Cypress
+# Portfolio Web Cypress
 
-> Este projeto foi criado com o objetivo de demonstrar meu conhecimento e habilidades em automação de testes web utilizando o framework Cypress. Aqui, você encontrará testes automatizados para diferentes cenários de uma aplicação web, incluindo testes de funcionalidade, usabilidade e integração.  
+Projeto de automacao E2E com Cypress para validacao do site `https://automationexercise.com`.
 
-### Sobre a aplicação:
- > Os testes fará a validação do site https://automationexercise.com/. 
-
-### Principais Tecnologias Utilizadas:
-
-- Cypress (13.8)
+## Stack
+- Node.js 20+
+- Cypress 13
 - JavaScript
-- Node.js (20.x)
 
+## Arquitetura
+A estrutura foi organizada em camadas para favorecer manutencao, reuso e clareza:
 
-## 💻 Conhecimentos Demonstrados:
-  
-# GIT
-- Regras de proteção da branch defautl;
-- Regras de pull request;
-- Git Flow;
-- Arquivos do git ignore;
-- Integração com ferramentas de CI/CD;
-
-# Arquitetura
-- Configuração de execução por ambiente;
-- Utilização do Page Object;
-- Definir o browser da execução de teste;
-
-# Testes
-- Criação de casos de teste;
-- Configuração de execução por Tag (tipo de teste, funcionalidade ou escopo);
-- Relatórios;
-
-
-## 🚀 Instalando portfolio_web_cypress
-
-Para instalar o portfolio_web_cypress, siga estas etapas:
-
-> 1. Instale o Node.js (18.x ou superior)
-   
-
-Windows: https://nodejs.org/en/download
-
-Linux: 
- ```
-    apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
- ```
-    pacman -S gtk2 gtk3 alsa-lib xorg-server-xvfb libxss nss libnotify
- ```
-    yum install -y xorg-x11-server-Xvfb gtk2-devel gtk3-devel libnotify-devel GConf2 nss libXScrnSaver alsa-lib
- ```
-
-> 2. Instale as dependências do projeto
-
-
- ```
- npm install
- ```
-
-## 📝 Executando Testes 
-
-Para executar toda a bateria de teste, siga estas etapas:
-
+```text
+cypress/
+  config/
+    base.js
+    development.js
+    homologacao.js
+  e2e/
+    access/
+      register.cy.js
+  fixtures/
+    users.json
+  support/
+    commands.js
+    e2e.js
+    components/
+      header-menu/
+        header-menu.selectors.js
+        header-menu.actions.js
+        header-menu.assertions.js
+    factories/
+      user.factory.js
+    flows/
+      account.flow.js
+      checkout.flow.js
+    pages/
+      access/
+      register/
+      account-created/
+      account-deleted/
+      products/
+      cart/
+      checkout/
+      contact/
 ```
+
+## Principios aplicados
+- Separacao de responsabilidades por camada (`component`, `page`, `flow`).
+- Separacao intra-pagina por responsabilidade (`selectors`, `actions`, `assertions`).
+- Reuso de regras de negocio em `flows`.
+- Isolamento entre testes com criacao de usuario dinamico.
+- Configuracao centralizada em `config/base.js`.
+- Execucao por tag via `@cypress/grep`.
+
+## Scripts
+- `npm run test:open`: abre o Cypress com config de desenvolvimento.
+- `npm run test:run`: executa E2E com config de homologacao.
+- `npm run test:dev:chrome`: executa E2E em Chrome com config de desenvolvimento.
+- `npm run test:smokeTest`: executa somente cenarios com tag `@smokeTest`.
+
+## Instalacao
+```bash
+npm install
+```
+
+## Execucao
+```bash
 npm run test:run
-```
-
-Para executar apenas o smoke Test, siga estas etapas:
-
-```
-npm run test:smokTest
 ```

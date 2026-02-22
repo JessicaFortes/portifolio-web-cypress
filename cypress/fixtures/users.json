@@ -6,7 +6,7 @@
     "day": "11",
     "month": "April",
     "year": "1991",
-    "fistName": "Maria",
+    "firstName": "Maria",
     "lastName": "Caldas",
     "company": "Magic Games SA",
     "address": "Rua das Flores",
@@ -16,5 +16,27 @@
     "city": "Montreal",
     "zipCode": "21795658",
     "number": "21999999999"
+  },
+  "authUser": {
+    "email": "user-994525@qa.com.br",
+    "password": "123456",
+    "name": "Julia Lopes",
+    "day": "20",
+    "month": "March",
+    "year": "1995",
+    "firstName": "Julia",
+    "lastName": "Lopes",
+    "company": "Test Works",
+    "address": "Rua das Flores",
+    "address2": "Apto 782",
+    "country": "India",
+    "state": "Parana",
+    "city": "Campinas",
+    "zipCode": "77511982",
+    "number": "21425733420"
+  },
+  "userInvalido": {
+    "email": "user-994525@qa.com.br",
+    "password": "12345699"
   }
 }
