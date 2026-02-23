@@ -18,25 +18,25 @@
     "number": "21999999999"
   },
   "authUser": {
-    "email": "user-994525@qa.com.br",
+    "email": "user-297890@qa.com.br",
     "password": "123456",
-    "name": "Julia Lopes",
-    "day": "20",
-    "month": "March",
-    "year": "1995",
-    "firstName": "Julia",
-    "lastName": "Lopes",
-    "company": "Test Works",
+    "name": "Ana Moraes",
+    "day": "4",
+    "month": "April",
+    "year": "1991",
+    "firstName": "Ana",
+    "lastName": "Moraes",
+    "company": "QA Labs",
     "address": "Rua das Flores",
-    "address2": "Apto 782",
-    "country": "India",
-    "state": "Parana",
-    "city": "Campinas",
-    "zipCode": "77511982",
-    "number": "21425733420"
+    "address2": "Apto 876",
+    "country": "United States",
+    "state": "Sao Paulo",
+    "city": "Curitiba",
+    "zipCode": "56526091",
+    "number": "21408079296"
   },
   "userInvalido": {
-    "email": "user-994525@qa.com.br",
+    "email": "user-297890@qa.com.br",
     "password": "12345699"
   }
 }

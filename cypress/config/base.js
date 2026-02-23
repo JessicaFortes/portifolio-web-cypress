@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { beforeRunHook, afterRunHook } = require("cypress-mochawesome-reporter/lib");
 
 let hasPopulatedUsersFixtureInThisRun = false;
 
@@ -8,7 +9,18 @@ const sharedE2EConfig = Object.freeze({
   specPattern: "cypress/e2e/**/*.cy.js",
   excludeSpecPattern: ["cypress/e2e/00-setup/**/*.cy.js"],
   supportFile: "cypress/support/e2e.js",
+  screenshotOnRunFailure: true,
   video: false,
+  reporter: "cypress-mochawesome-reporter",
+  reporterOptions: {
+    reportDir: "cypress/reports/mochawesome",
+    overwrite: false,
+    html: true,
+    json: true,
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    charts: true,
+  },
 });
 
 function randomFrom(list) {
@@ -89,13 +101,19 @@ function updateUsersFixtureWithPreTestData(projectRoot) {
 }
 
 function registerPreTestHook(on, config) {
-  on("before:run", () => {
+  on("before:run", async (runDetails) => {
+    await beforeRunHook(runDetails);
+
     if (hasPopulatedUsersFixtureInThisRun) {
       return;
     }
 
     updateUsersFixtureWithPreTestData(config.projectRoot);
     hasPopulatedUsersFixtureInThisRun = true;
+  });
+
+  on("after:run", async (results) => {
+    await afterRunHook(results);
   });
 }
 

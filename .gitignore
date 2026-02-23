@@ -4,10 +4,11 @@
 # testing
 /cypress/screenshots
 /cypress/videos
+/cypress/reports
+/cypress/downloads
 
 # production
 /build
-package-lock.json
 
 #env
 

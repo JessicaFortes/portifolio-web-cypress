@@ -54,6 +54,23 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+      - name: Upload test reports (smoke)
+        id: upload-report-smoke
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-report-smoke
+          path: cypress/reports/mochawesome
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Publish smoke report link
+        if: always()
+        run: |
+          echo "## Smoke Report" >> $GITHUB_STEP_SUMMARY
+          echo "- Artifact: [cypress-report-smoke](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-report-smoke.outputs.artifact-id }})" >> $GITHUB_STEP_SUMMARY
+          echo "- Abra o arquivo \`report.html\` dentro do artefato." >> $GITHUB_STEP_SUMMARY
+
   regression-tests:
     name: Full Regression
     runs-on: ubuntu-latest
@@ -91,4 +108,21 @@ jobs:
             cypress/downloads
           if-no-files-found: ignore
           retention-days: 7
+
+      - name: Upload test reports (regression)
+        id: upload-report-regression
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-report-regression
+          path: cypress/reports/mochawesome
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Publish regression report link
+        if: always()
+        run: |
+          echo "## Regression Report" >> $GITHUB_STEP_SUMMARY
+          echo "- Artifact: [cypress-report-regression](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-report-regression.outputs.artifact-id }})" >> $GITHUB_STEP_SUMMARY
+          echo "- Abra o arquivo \`report.html\` dentro do artefato." >> $GITHUB_STEP_SUMMARY
       
